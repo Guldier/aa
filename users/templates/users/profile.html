@@ -1,0 +1,17 @@
+{% extends 'tc/base.html' %}
+{% block content %}
+
+    <div style="margin:0 auto;text-align:center">
+        <h2>{{ user.username }} </h2>
+        {% if users_log is False %}
+            <a> You need to put some money on your account</a>
+        {% else %}
+            {% if user.profile.isActive %}
+                <a> Status: <a style="color: green"> Enable </a></a>
+            {% else %}
+                <a> Status: <a style="color: red"> Disable </a></a>
+            {% endif %}
+        {% endif %}
+    </div>
+
+{% endblock content %}  

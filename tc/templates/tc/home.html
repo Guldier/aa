@@ -1,0 +1,40 @@
+
+{% extends 'tc/base.html' %}
+{% load static %}
+{% block content %}
+
+    {% if user.is_authenticated %}
+    
+        <div style="margin:0 auto;text-align:center">
+            <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                    <h1 class="display-4 fw-normal">{{ user.username }} </h1>
+                        {% if user.profile.isActive %}
+                            <p class="lead fw-normal">Status: <a style="color: green"> Enable </a></p>
+                        {% else %}
+                            <p class="lead fw-normal">Status: <a style="color: red"> Disable </a></p>
+                        {% endif %}
+                            <p class="lead fw-normal">Your uses: {{ uses }}</p>
+                </div>
+            </div>
+        </div>
+       
+    {% else %}
+        <div style="margin:0 auto;text-align:center">
+            <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+                <div class="col-md-7 p-lg-5 mx-auto my-5">
+                    <h1 class="display-4 fw-normal">Underliner</h1>
+                    <p class="lead fw-normal">Looking for automation solution to rule off AMM steps?</p>
+                    <p class="lead fw-normal">Underliner is a tool where you can import all your PDF files. With one click  work will be done for you. This is the online tool. There is no need to install any software and run configurations. It's accesable at all devices. </p>
+                    <p class="lead fw-normal">
+                        <img src="{% static 'static/example.png' %}" alt="Logo" style="width:400px;">
+                    </p>
+                    <a class="btn btn-outline-secondary" href="{% url 'register' %}">Register</a>
+                </div>
+                <div class="product-device shadow-sm d-none d-md-block"></div>
+                <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+              </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

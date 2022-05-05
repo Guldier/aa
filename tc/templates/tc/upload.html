@@ -1,0 +1,17 @@
+{% extends 'tc/base.html' %}
+
+{% block content %}
+    <div style="margin:0 auto;text-align:center">
+        <h2>Upload</h2>
+        <br>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="margin:0 auto;text-align:center">
+                <p>Select your Taskcards and AMMs</p>
+                <input type="file" multiple name="taskcards" class="btn btn-outline-secondary">
+            </div>
+            <br>
+            <button class="btn btn-outline-secondary" type="submit"> Upload file </button> 
+        </form>
+    </div>
+{% endblock %}
