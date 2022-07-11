@@ -86,7 +86,7 @@ def parse_obj(lt_objs):
     for obj in lt_objs:
 
         # if it's a textbox, print text and location
-        if isinstance(obj, pdfminer.layout.LTTextBoxHorizontal):
+        if isinstance(obj, pdfminer.layout.LTTextBoxHorizontal):#ZMIANA WYSZYKIWANIA !!!!!!!!!!!!!!!!
             if "SUBTASK" in obj.get_text():
                 locations.append(obj.bbox[1])
     
