@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com','195.78.66.133']
+ALLOWED_HOSTS = ['.herokuapp.com','195.78.66.133',['guldier.com'],['guldier.com/underliner']]
 
 
 # Application definition
